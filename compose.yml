@@ -1,5 +1,20 @@
 services:
-
+  server:
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      - PORT=${PORT}
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+    volumes:
+      - .:/usr/src/app
+    command: npm start
+    
   mariadb:
     image: mariadb:10.11
     container_name: homelink-db
