@@ -5,10 +5,10 @@ services:
     container_name: homelink-db
     restart: unless-stopped
     environment:
-      MARIADB_ROOT_PASSWORD: rootpassword
-      MARIADB_DATABASE: homelink
-      MARIADB_USER: homelink_user
-      MARIADB_PASSWORD: strongpassword
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
 
