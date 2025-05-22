@@ -11,7 +11,6 @@ app.use(cors());
 
 // Hardcodea el token directamente aquí
 const token = 'Bearer ' + process.env.TOKEN;
-console.log(token)
 
 const haURL = 'http://192.168.1.200:8123';  // Verifica que esta IP sea accesible
 
