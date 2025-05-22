@@ -13,6 +13,7 @@ app.use(cors());
 const token = 'Bearer ' + process.env.TOKEN;
 
 const haURL = 'http://192.168.1.200:8123';  // Verifica que esta IP sea accesible
+const sqlURL = 'http://localhost:3306'
 
 // Ruta para encender la luz
 app.post('/api/services/light/turn_on', async (req, res) => {
